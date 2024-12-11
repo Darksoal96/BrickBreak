@@ -28,7 +28,8 @@ public class Paddle {
 	Color metaKnightPurp =new Color (61,0,124);
 	
 	//methods:
-		//getters and setters
+
+	//getters and setters:
 		public int getWidth() {
 			return width;
 		}
@@ -60,7 +61,7 @@ public class Paddle {
 		public void setY(int y) {
 			this.y = y;
 		}
-		public int getVelocity(int velocity){
+		public int getVelocity(){
 			return velocity;
 
 		}
@@ -72,10 +73,19 @@ public class Paddle {
 			this.velocity = velocity ;
 
 		}
+		//move:
+		public void move (){
+			x += velocity;
+			this.y=550;
+			
+		}
+
+
 		//precondition: 
 		//postcondition: the brick is drawn using the color corresponding to its HP value.
 		public void draw(Graphics g) {
-
+			g.setColor(metaKnightPurp); // call first to set the desired color
+			g.fillRect(x , y, width, height); // draws a rectangle (paddle)
 		}
 		
 
